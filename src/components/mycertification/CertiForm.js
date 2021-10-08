@@ -2,79 +2,14 @@ import React, { useEffect, useState, useRef } from 'react'
 import { Button, Row, Col, Card, Container } from 'react-bootstrap'
 import styles from '../../css/CertiForm.module.css'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import ComAxios from '../../util/ComAxios'
+// import ComAxios from '../../util/ComAxios'
 import { BsFileEarmarkFontFill,BsFileEarmarkImageFill, BsDownload } from "react-icons/bs";
+import Link from '@mui/material/Link';
 function CertiForm(props){
 
     useEffect(() => {
         console.log("useEffect 마운트될때");
-        handlePageUrl();
-        handleImageUrl();
-        handleGetImage();
-        setVerification_id();
-
     }, []);
-
-    const [pageUrl, setPageUrl] = useState();
-    const [imageUrl, setImageUrl] = useState();
-    const [verification_id, setVerification_id] = useState();
-
-    // const createPageUrl = (id) => {
-    //     console.log(id)
-
-    //     setPageUrl(id => {
-    //         console.log(id)
-    //     })
-    // }
-
-    // 5.4  증명서 url 상세페이지 /verification/{verification_id}
-    const handlePageUrl = () => {
-        ComAxios({
-            method: "get",
-            url: "http://3.37.123.157:8000/verification/{verification_id}",
-        })
-    }
-
-    // 5.5 증명서 사진 생성
-    const handleGetImage = () => {}
-
-    // 5.2  증명서 사진 url
-    // 사진url호출
-    // data
-    const handleImageUrl = (verification_id) => {
-        console.log(verification_id);
-        ComAxios({
-            method: "get",
-            url: "http://3.37.123.157:8000/verification/image/6153094e1fc2f34655124588",
-            // url: "http://3.37.123.157:8000/verification/image/"{verification_id},
-        })
-        .then((imageUrl) => {
-            // console.log(imageUrl.data.url);
-            // const dd = coin.data.data.map((data) => {
-            //   return data.coin_symbol;
-            // });
-            // setCoinSymbolList(dd);
-          })
-          .catch((imageUrl) => {
-            // console.log(imageUrl.data.url);
-          });
-    }
-
-    // 5.3  증명서 사진 다운로드
-    // verification_id의 사진 가져올것
-
-    const handleImageLoad = () => {
-        console.log('a')
-        ComAxios({
-            method: "get",
-            url: "http://3.37.123.157:8000/verification/image/download/verification_id}"
-          })
-    }
-
-
-    // copied 알람
-    const [show, setShow] = useState(false);
-    const target = useRef(null);
 
         return (
             <div className={styles.certiBox}>
@@ -86,30 +21,25 @@ function CertiForm(props){
                         </div>
                         <ul>
                             <li>
-                                <CopyToClipboard text={ props.url }>
-                                    <Button id={props.url} className={styles.urlBtn} variant="dark" ref={target} onClick={() => setShow(!show)}>
+                                <CopyToClipboard text={props.certiUrl}>
+                                    <Button id={props.certiUrl} className={styles.urlBtn} variant="dark">
                                         <BsFileEarmarkFontFill />
                                     </Button>
                                 </CopyToClipboard>
-                                {/* <Overlay target={target.current} show={show} placement="right">
-                                    {(props) => (
-                                        <Tooltip id="overlay-example">
-                                        복사 완료
-                                        </Tooltip>
-                                    )}
-                                </Overlay> */}
                             </li>
                             <li>
-                                <CopyToClipboard text={ props.url }>
-                                    <Button id={props.url} className={styles.urlBtn} variant="dark" onClick={()=>{handleImageUrl(props.id)}}>
+                                <CopyToClipboard text={ props.imageUrl }>
+                                    <Button id={props.imageUrl} className={styles.urlBtn} variant="dark">
                                         <BsFileEarmarkImageFill />
                                     </Button>
                                 </CopyToClipboard>
                             </li>
                             <li>
-                                <Button className={styles.urlBtn} variant="dark" onClick={()=>{handleImageLoad()}}>
-                                    <BsDownload />
-                                </Button>
+                                <Link href={props.imageDownloadUrl}>
+                                    <Button id={props.imageDownloadUrl} className={styles.urlBtn} variant="dark">
+                                        <BsDownload />
+                                    </Button>
+                                </Link>
                             </li>
                         </ul>
                     </Card.Header>
@@ -148,6 +78,9 @@ export default CertiForm;
 
 
 // click -> copied
+// copied 알람
+// const [show, setShow] = useState(false);
+// const target = useRef(null);
 // function Example() {
 //     const [show, setShow] = useState(false);
 //     const target = useRef(null);
@@ -170,6 +103,35 @@ export default CertiForm;
   
 //   render(<Example />);
 
+
+
+
+
+
+
+
+
+    // 5.2  증명서 사진 url
+    // 사진url호출
+    // data
+    // const handleImageUrl = (verification_id) => {
+    //     console.log(verification_id);
+    //     ComAxios({
+    //         method: "get",
+    //         url: "http://3.37.123.157:8000/verification/image/6153094e1fc2f34655124588",
+    //         // url: "http://3.37.123.157:8000/verification/image/"{verification_id},
+    //     })
+    //     .then((imageUrl) => {
+    //         // console.log(imageUrl.data.url);
+    //         // const dd = coin.data.data.map((data) => {
+    //         //   return data.coin_symbol;
+    //         // });
+    //         // setCoinSymbolList(dd);
+    //       })
+    //       .catch((imageUrl) => {
+    //         // console.log(imageUrl.data.url);
+    //       });
+    // }
 
 
 

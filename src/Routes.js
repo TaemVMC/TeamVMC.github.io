@@ -8,7 +8,6 @@ import Mycertification from "./components/mycertification/Mycertification";
 import Mypage from "./components/mypage/Mypage";
 import Sub from "./components/layout/Sub";
 import CertificationUrl from "./components/mycertification/CertificationUrl";
-import ShareUrl from "./components/mycertification/ShareUrl"
 
 export default class Routes extends Component {
   render() {
@@ -23,7 +22,8 @@ export default class Routes extends Component {
             <Route path="/certification" exact component={Certification} />
             <Route path="/mycertification" exact component={Mycertification} />
             <Route path="/mypage" exact component={Mypage} />
-            <ShareUrl></ShareUrl>
+            <Route path="/CertificationUrl" exact component={CertificationUrl} />
+            <Route path="/:name" component={CertificationUrl} />
           </Sub>
         </Switch>
       </Router>

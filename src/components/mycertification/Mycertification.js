@@ -5,7 +5,7 @@ import styles from '../../css/Mycertification.module.css'
 // import { useSelector } from 'react-redux'
 // import { setData } from "../../modules/Reducer";
 import ComAxios from "../../util/ComAxios";
-// import dummy from "../../db/data.json"
+import dummy from "../../db/data.json"
 import {BsPlusCircleFill} from "react-icons/bs";
 import { Link } from "react-router-dom"
 
@@ -36,10 +36,6 @@ export default function Mycertification() {
     return(
         <div className={styles.container}>
         <div className={styles.background}>
-            {/* <div className={styles.hd}>
-            <p className={styles.kor}>증명서 목록</p>
-            <span className={styles.eng}>My certification</span>
-            </div> */}
         <article className={styles.certiList}>
         {verifiedLists.map((data) => (
                         <CertiForm
@@ -53,7 +49,9 @@ export default function Mycertification() {
                             profit={data.profit}
                             average={data.avarage_cost}
                             units={data.units}
-                            url={data.image_url}
+                            imageUrl={data.image_url}
+                            imageDownloadUrl={data.image_download_url}
+                            certiUrl={data.certification_url}
                         ></CertiForm>
                         ))}
         </article>

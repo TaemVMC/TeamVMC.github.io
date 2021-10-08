@@ -28,6 +28,7 @@
     "http-proxy-middleware": "^2.0.1",
     "immer": "^9.0.6",
     "node-sass": "^6.0.1",
+    "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-rc.0",
     "react-cookie": "^4.1.1",
