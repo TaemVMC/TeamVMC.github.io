@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CertiForm from './CertiForm'
 import styles from '../../css/Mycertification.module.css'
-import axios from 'axios'
+// import axios from 'axios'
 // import { useSelector } from 'react-redux'
 // import { setData } from "../../modules/Reducer";
 import ComAxios from "../../util/ComAxios";
@@ -11,7 +11,7 @@ import { Link } from "react-router-dom"
 
 export default function Mycertification() {
 
-    const [verifiedLists, setVerifiedLists] = useState({});
+    const [verifiedLists, setVerifiedLists] = useState([]);
 
     useEffect(() => {
         console.log("useEffect 마운트될때");
@@ -25,12 +25,12 @@ export default function Mycertification() {
             method: "get",
             url: "http://3.37.123.157:8000/verification",
         })
-            .then((list) => {
-                setVerifiedLists(list.data)
-            })
-            .catch((list) => {
-                console.log(list);
-            });
+        .then((list) => {
+            setVerifiedLists(list.data)
+        })
+        .catch((list) => {
+            console.log(list);
+        });
     };
 
     return(

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Button, Row, Col, Card, Container, Overlay, Tooltip } from 'react-bootstrap'
+import { Button, Row, Col, Card, Container } from 'react-bootstrap'
 import styles from '../../css/CertiForm.module.css'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import ComAxios from '../../util/ComAxios'
@@ -27,8 +27,7 @@ function CertiForm(props){
     //     })
     // }
 
-    // 5.4  증명서 url 상세페이지
-    // /verification/{verification_id}
+    // 5.4  증명서 url 상세페이지 /verification/{verification_id}
     const handlePageUrl = () => {
         ComAxios({
             method: "get",

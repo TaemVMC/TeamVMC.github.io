@@ -55,6 +55,7 @@ export default function Certification() {
     initCoin();
     initPayment();
   }, []);
+  
   const state = useSelector((state) => state);
   const [paymentCurrencyList, setPaymentCurrencyList] = useState([]);
   const [paymentCurrency, setPaymentCurrency] = useState([]);
