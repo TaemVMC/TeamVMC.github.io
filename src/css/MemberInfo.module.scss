@@ -1,4 +1,4 @@
-.card-outline {
+.cardOutline {
     display: inline-block;
     // padding: 0 2rem;
     .card {
@@ -12,18 +12,18 @@
             width: 60%;
             margin: auto;
             // .profileImg {
-            .rounded-circle {
+            .profileImg {
                 width: 100%;
                 display: inline-block;
                 margin: 0 auto;
             }
         }
-        .card-body {
+        .cardBody {
             height: 50%;
             color: rgba(0, 0, 0, 0.7) !important;
             font-weight: bolder !important;
             padding-bottom: 0 !important;
-            .card-body_title {
+            .cardBodyTitle {
                 // text-align: center;
                 display: flex;
                 // justify-content: space-between;
@@ -39,19 +39,20 @@
                     color: rgba(0, 0, 0, 0.4) !important;
                 }
             }
-            .card-text {
+            .cardText {
                 font-size: 0.8rem;
-                ul {
+                .skills {
                     margin: 0;
                     padding: 0;
                     list-style: none;
-                    // display: flex;
-                    li {
-                        margin-right: 5px;
+                    display: flex;
+                    .skill {
+                        display: inline-block;
+                        margin-right: 15px;
                     }
                 }
             }
-            .btn-box {
+            .btnBox {
                 width: 100%;
                 text-align: right;
                 .btn {

@@ -55,16 +55,30 @@
         }
     ],
     "verifiedLists": [{
-        "id": "6153094e1fc2f34655124588",
-        "user_id": "test",
-        "exchange_name": "Bithumb",
-        "start_date": "2021-01-01",
-        "end_date": "2021-01-10",
-        "order_currency": "OMG",
-        "payment_currency": "KRW",
-        "units": "10.55",
-        "profit": "-10000",
-        "avarage_cost": "17,000",
-        "image_url": "https://vmc-bucket.s3.ap-northeast-2.amazonaws.com/verification/f84e87be-abb1-4c5b-89af-9ea75fcd1e22"
-    }]
+            "id": "6153094e1fc2f34655124588",
+            "user_id": "test",
+            "exchange_name": "Bithumb",
+            "start_date": "2021-01-01",
+            "end_date": "2021-10-10",
+            "order_currency": "OMG",
+            "payment_currency": "KRW",
+            "units": "10.55",
+            "profit": "10,000",
+            "yield": "10",
+            "image_url": "https://vmc-bucket.s3.ap-northeast-2.amazonaws.com/verification/f84e87be-abb1-4c5b-89af-9ea75fcd1e22"
+        },
+        {
+            "id": "6153094e1fc2f34655124588",
+            "user_id": "test",
+            "exchange_name": "Bithumb",
+            "start_date": "2019-01-01",
+            "end_date": "2021-5-10",
+            "order_currency": "OMG",
+            "payment_currency": "KRW",
+            "units": "10.55",
+            "profit": "50,000",
+            "yield": "50",
+            "image_url": "https://vmc-bucket.s3.ap-northeast-2.amazonaws.com/verification/f84e87be-abb1-4c5b-89af-9ea75fcd1e22"
+        }
+    ]
 }

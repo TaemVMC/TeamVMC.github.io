@@ -1,9 +1,33 @@
+.Carousel {
+  margin: auto;
+  margin-bottom: 30px;
+}
+
 .Carousel .CarouselItem {
   width: 100%;
 }
 
 .Carousel .CarouselItem img {
   width: 100%;
-  opacity: 0.3;
+  opacity: 0.8;
+}
+
+.Carousel .CarouselItem .CarouselCaption {
+  position: static;
+  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px 0;
+}
+
+.Carousel .CarouselItem .CarouselCaption h3 {
+  color: gray !important;
+  color: rgba(0, 0, 0, 0.7) !important;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.Carousel .CarouselItem .CarouselCaption p {
+  color: rgba(0, 0, 0, 0.5) !important;
+  font-size: 0.8rem;
 }
 /*# sourceMappingURL=AboutSlide.module.css.map */

@@ -59,12 +59,12 @@ function CertiForm(props){
                             </Row>
                             <Row>
                                 <Col className={styles.item}>
-                                    <p className={styles.itemValue}>{props.yield} %</p>
-                                    <span className={styles.itemTag}>수익률</span>
-                                </Col>
-                                <Col className={styles.item}>
                                     <p className={styles.itemValue}>{props.profit} {props.payment}</p>
                                     <span className={styles.itemTag}>평가손익</span>
+                                </Col>
+                                <Col className={styles.item}>
+                                    <p className={styles.itemValue}>+ {props.yield} %</p>
+                                    <span className={styles.itemTag}>수익률</span>
                                 </Col>
                             </Row>
                             </Container>

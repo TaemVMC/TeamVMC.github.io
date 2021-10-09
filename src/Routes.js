@@ -23,7 +23,7 @@ export default class Routes extends Component {
             <Route path="/mycertification" exact component={Mycertification} />
             <Route path="/mypage" exact component={Mypage} />
             <Route path="/CertificationUrl" exact component={CertificationUrl} />
-            <Route path="/:name" component={CertificationUrl} />
+            <Route path="/verification/external/:name" component={CertificationUrl} />
           </Sub>
         </Switch>
       </Router>

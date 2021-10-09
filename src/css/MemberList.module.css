@@ -1,3 +1,7 @@
+.container {
+  margin: auto;
+}
+
 .container .cards {
   width: 100%;
   display: -webkit-box;

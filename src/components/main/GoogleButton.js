@@ -17,6 +17,7 @@ export default function GoogleButton() {
     const data = {
       idToken: response.tokenId,
     };
+
     axios({
       method: "post",
       url: url,

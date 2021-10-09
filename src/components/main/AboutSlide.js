@@ -15,7 +15,7 @@ export default class ProjectSlide extends Component {
                 <Carousel.Item className={styles.CarouselItem}>
                     <img
                     className="d-block w-100"
-                    src="img/AboutSlide/example.png"
+                    src="img/AboutSlide/slide_Mycertification.png"
                     alt="example"
                     />
                     <Carousel.Caption className={styles.CarouselCaption}>
@@ -26,10 +26,9 @@ export default class ProjectSlide extends Component {
                 <Carousel.Item className={styles.CarouselItem}>
                     <img
                     className="d-block w-100"
-                    src="img/AboutSlide/example.png"
+                    src="img/AboutSlide/slide_CertificationUrl.png"
                     alt="example"
                     />
-
                     <Carousel.Caption className={styles.CarouselCaption}>
                     <h3>증명서 공유</h3>
                     <p>베마코에서 발급받은 증명서를 사람들과 공유하세요.</p>
@@ -38,10 +37,9 @@ export default class ProjectSlide extends Component {
                 <Carousel.Item className={styles.CarouselItem}>
                     <img
                     className="d-block w-100"
-                    src="img/AboutSlide/example.png"
+                    src="img/AboutSlide/slide_Dashboard.png"
                     alt="example"
                     />
-
                     <Carousel.Caption className={styles.CarouselCaption}>
                     <h3>대시보드</h3>
                     <p>코인 거래 관련 자료를 한 눈에 확인합니다.</p>

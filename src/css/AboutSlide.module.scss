@@ -1,18 +1,27 @@
 .Carousel {
     // width: 80%;
-    // margin: auto;
+    margin: auto;
+    margin-bottom: 30px;
     .CarouselItem {
         width: 100%;
         img {
             width: 100%;
-            opacity: 0.3;
+            opacity: 0.8;
         }
         .CarouselCaption {
+            position: static;
+            background: rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px 0;
             h3 {
-                // color: white !important;
+                color: gray !important;
+                color: rgba(0, 0, 0, 0.7) !important;
+                font-size: 1.6rem;
+                margin-bottom: 10px;
             }
             p {
-                // color: white !important;
+                color: rgba(0, 0, 0, 0.5) !important;
+                font-size: 0.8rem;
             }
         }
     }

@@ -7,26 +7,26 @@ import styles from '../../css/MemberInfo.module.css'
 export default function MemberInfo (props) {
 
     return (
-            <div className="card-outline">
-                <Card  className="card" border="light" text="muted">
-                    <div className="cardTop">
+            <div className={styles.cardOutline}>
+                <Card  className={styles.card} border="light" text="muted">
+                    <div className={styles.cardTop}>
                         <Image className={styles.profileImg} src={props.image} roundedCircle />
                     </div>
                     {/* <Card.Img className="profileImg" variant="top" src={props.image} bsPrefix="card-img"/> */}
-                    <Card.Body className="card-body">
-                        <Card.Title className="card-body_title">
+                    <Card.Body className={styles.cardBody}>
+                        <Card.Title className={styles.cardBodyTitle}>
                             <p>{props.name}</p>
                             <span>{props.part}</span>
                         </Card.Title>
-                        <Card.Text className="card-text">
+                        <Card.Text className={styles.cardText}>
                             <p className="introduction">{props.intro}</p>
-                            <ul className="skills">
+                            <ul className={styles.skills}>
                                 {props.skill.map(skill => (
-                                    <li className="skill"># {skill}</li>
+                                    <li className={styles.skill}># {skill}</li>
                                 ))}
                             </ul>
                         </Card.Text>
-                        <div className="btn-box"><Button className="btn" variant="dark">See portfolios</Button></div>
+                        <div className={styles.btnBox}><Button className={styles.btn} variant="dark">See portfolios</Button></div>
                     </Card.Body>
                 </Card>
             </div>

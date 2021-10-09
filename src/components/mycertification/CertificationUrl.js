@@ -19,11 +19,11 @@ export default function CertificationUrl({ match, location }) {
   // 5.1 사용자증명목록
   // /verification
   const loadUrl = (id) => {
-    console.log("http://3.37.123.157:8000/verification/"+id)
+    console.log("http://3.37.123.157:8000/verification/external/"+id)
 
       ComAxios({
           method: "get",
-          url: "http://3.37.123.157:8000/verification/"+id,
+          url: "http://3.37.123.157:8000/verification/external/"+id,
       })
       .then((res) => {
         setVerifiedData(res.data);
@@ -51,7 +51,6 @@ export default function CertificationUrl({ match, location }) {
 
   return (
     <Fragment>
-      <hr />
       <Paper
         sx={{
           p: 4,
@@ -59,6 +58,7 @@ export default function CertificationUrl({ match, location }) {
           flexDirection: "column",
           marginRight: 45,
           marginLeft: 45,
+          marginTop: 5
         }}
         style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >

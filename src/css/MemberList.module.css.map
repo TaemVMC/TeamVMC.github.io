@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAOI,UAPM,CAON,MAAM,CAAC;EACH,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;CACjC",
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EAIP,MAAM,EAAE,IAAI;CASf;;AAbD,AAOI,UAPM,CAON,MAAM,CAAC;EAEH,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;CACjC",
     "sources": [
         "MemberList.module.scss"
     ],
