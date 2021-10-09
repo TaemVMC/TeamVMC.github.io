@@ -1,0 +1,11 @@
+.lists {
+    list-style: none;
+    .list {
+        margin-bottom: 5px;
+        .keyLink {
+            display: inline-block;
+            margin-left: 10px;
+            color: black;
+        }
+    }
+}

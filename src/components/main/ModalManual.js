@@ -1,25 +1,25 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-
+import styles from "../../css/ModalDeleteAccount.module.css";
 function ModalManual(props) {
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       {/* <Modal.Header closeButton> */}
       <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">증명서 발급 매뉴얼</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">증명서 발급 메뉴얼</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {/* <h4>Centered Modal</h4> */}
-        <ul>
-          <li>1) 정보 입력</li>
-          <li>
-            2) key 입력
-            <a href="https://www.bithumb.com/customer_support/info_guide?seq=1901&categorySeq=205" target="_blank" rel="noreferrer">
+        <ul className={styles.lists}>
+          <li className={styles.list}>1) 증명을 위한 거래 정보 입력 : 거래코인, 결제통화, 거래기간</li>
+          <li className={styles.list}>
+            2) key 발급 및 입력 : Public Key, Private Key &rarr; 
+            <a className={styles.keyLink} href="https://www.bithumb.com/customer_support/info_guide?seq=1901&categorySeq=205" target="_blank" rel="noreferrer">
               key 발급 방법 알아보기
             </a>
           </li>
-          <li>3) 수익 조회</li>
-          <li>4) 증명서 발급</li>
+          <li className={styles.list}>3) 증명서 발행</li>
+          <li className={styles.list}>4) 링크 복사 또는 이미지 다운로드를 통해 증명서 공유</li>
         </ul>
       </Modal.Body>
       <Modal.Footer>

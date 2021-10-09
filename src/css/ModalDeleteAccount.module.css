@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=ModalDeleteAccount.module.css.map */
+.lists {
+  list-style: none;
+}
+
+.lists .list {
+  margin-bottom: 5px;
+}
+
+.lists .list .keyLink {
+  display: inline-block;
+  margin-left: 10px;
+  color: black;
+}
+/*# sourceMappingURL=ModalDeleteAccount.module.css.map */

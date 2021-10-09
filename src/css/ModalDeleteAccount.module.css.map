@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EACH,UAAU,EAAE,IAAI;CASnB;;AAVD,AAEI,MAFE,CAEF,KAAK,CAAC;EACF,aAAa,EAAE,GAAG;CAMrB;;AATL,AAIQ,MAJF,CAEF,KAAK,CAED,QAAQ,CAAC;EACL,OAAO,EAAE,YAAY;EACrB,WAAW,EAAE,IAAI;EACjB,KAAK,EAAE,KAAK;CACf",
     "sources": [
         "ModalDeleteAccount.module.scss"
     ],
