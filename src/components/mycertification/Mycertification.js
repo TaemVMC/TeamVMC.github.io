@@ -5,7 +5,7 @@ import styles from '../../css/Mycertification.module.css'
 // import { useSelector } from 'react-redux'
 // import { setData } from "../../modules/Reducer";
 import ComAxios from "../../util/ComAxios";
-import dummy from "../../db/data.json"
+// import dummy from "../../db/data.json"
 import {BsPlusCircleFill} from "react-icons/bs";
 import { Link } from "react-router-dom"
 
@@ -47,8 +47,7 @@ export default function Mycertification() {
                             end={data.end_date}
                             app={data.exchange_name}
                             profit={data.profit}
-                            average={data.avarage_cost}
-                            units={data.units}
+                            yield={data.yield}
                             imageUrl={data.image_url}
                             imageDownloadUrl={data.image_download_url}
                             certiUrl={data.certification_url}

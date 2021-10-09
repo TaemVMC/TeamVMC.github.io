@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { Button, Row, Col, Card, Container } from 'react-bootstrap'
 import styles from '../../css/CertiForm.module.css'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 // import ComAxios from '../../util/ComAxios'
 import { BsFileEarmarkFontFill,BsFileEarmarkImageFill, BsDownload } from "react-icons/bs";
 import Link from '@mui/material/Link';
+
 function CertiForm(props){
 
     useEffect(() => {
@@ -58,8 +59,8 @@ function CertiForm(props){
                             </Row>
                             <Row>
                                 <Col className={styles.item}>
-                                    <p className={styles.itemValue}>{props.average} {props.payment}</p>
-                                    <span className={styles.itemTag}>평균단가</span>
+                                    <p className={styles.itemValue}>{props.yield} %</p>
+                                    <span className={styles.itemTag}>수익률</span>
                                 </Col>
                                 <Col className={styles.item}>
                                     <p className={styles.itemValue}>{props.profit} {props.payment}</p>
