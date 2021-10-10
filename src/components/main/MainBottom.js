@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styles from '../../css/MainBottom.module.css'
-import MemberList from './MemberList'
+// import MemberList from './MemberList'
 import AboutProject from './AboutProject'
 
 export default class MainBottom extends Component {
@@ -18,10 +18,10 @@ export default class MainBottom extends Component {
                         <h2>서비스 소개</h2>
                         <AboutProject></AboutProject>
                     </article>
-                    <article>
+                    {/* <article>
                         <h2>프로젝트 구성원</h2>
                         <MemberList></MemberList>                
-                    </article>
+                    </article> */}
                 </div>
             </div>
         )

@@ -1,33 +1,41 @@
-        .certiBox {
-            margin-bottom: 30px;
-            width: 100%;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-            .hd {
-                // font-weight: bolder;
-                // border-bottom: 1px solid gray;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background: white;
-                // background: #212529;
-                // color: white;
-                .title {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-end;
-                    .itemValue {
-                        color: rgba(0, 0, 0, 0.8);
-                        margin: 0;
-                        margin-right: 8px;
-                        // line-height: 0;
-                    }
-                    .itemTag {
-                        color: rgba(0, 0, 0, 0.5);
-                        font-size: 0.7rem;
-                        margin-bottom: 2px;
-                    }
-                }
+.certiBox {
+    margin-bottom: 30px;
+    width: 100%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    .hd {
+        // font-weight: bolder;
+        // border-bottom: 1px solid gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        // background: #212529;
+        // color: white;
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            .itemValue {
+                color: rgba(0, 0, 0, 0.8);
+                margin: 0;
+                margin-right: 8px;
+                // line-height: 0;
             }
+            .itemTag {
+                color: rgba(0, 0, 0, 0.5);
+                font-size: 0.7rem;
+                margin-bottom: 2px;
+            }
+        }
+        .deleteBtn {
+            text-align: center;
+            font-size: 0.65rem;
+            padding: 0;
+        }
+    }
+    .bd {
+        .title {
+            margin-bottom: 30px;
             .content {
                 list-style: none;
                 .item {
@@ -36,6 +44,7 @@
                     .itemValue {
                         color: rgba(0, 0, 0, 0.8);
                         margin: 0;
+                        font-size: 1rem;
                     }
                     .itemTag {
                         color: rgba(0, 0, 0, 0.5);
@@ -43,6 +52,10 @@
                     }
                 }
             }
+        }
+        .txt {
+            display: flex;
+            justify-content: end;
             ul {
                 list-style: none;
                 display: flex;
@@ -168,3 +181,5 @@
                 }
             }
         }
+    }
+}
