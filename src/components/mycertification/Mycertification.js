@@ -29,14 +29,16 @@ export default function Mycertification() {
         })
         .then((list) => {
             if (list.status == 200 && list.data.code == 3200){
-                setVerifiedLists(list.data)
+                setVerifiedLists(list.data.data)
+                console.log(list.data.data)
             } else{
                 alert("첫 증명서를 발급해주세요.")
                 history.push("/certification")
             }
         })
         .catch((list) => {
-            console.log(list);
+            // console.log(list);
+            console.log('에러'+list);
         });
     };
 

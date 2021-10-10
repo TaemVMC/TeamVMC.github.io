@@ -6,53 +6,61 @@ import ComAxios from "../../util/ComAxios";
 import { useState, useEffect } from "react";
 import { Table } from 'react-bootstrap'
 import { useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 
 export default function CertificationUrl({ match, location }) {
   
   const [verifiedData, setVerifiedData] = useState([]);
+  const [username, setUsername] = useState([]);
   const verification_id = match.params.name;
   const history = useHistory();
+
+  console.log(match.params.name);
+
 
   useEffect(() => {
     console.log("useEffect 마운트될때");
     loadUrl(verification_id);
+    getUsername();
 }, []);
 
   // 5.1 사용자증명목록
   // /verification
   const loadUrl = (id) => {
-    console.log("http://3.37.123.157:8000/verification/external/"+id)
-
-      ComAxios({
-          method: "get",
-          url: "http://3.37.123.157:8000/verification/external/"+id,
-      })
-      .then((res) => {
-        if (res.status == 200 && res.data.code == 3200){
-          setVerifiedData(res.data);
-        }
-      })
-      .catch((res) => {
+    ComAxios({
+      method: "get",
+      url: "http://3.37.123.157:8000/verification/external/"+id,
+    })
+    .then((res) => {
+      console.log("성공")
+      if (res.status == 200 && res.data.code == 3200){
+        console.log(res.data.data)
+        setVerifiedData(res.data.data);
+      } else {
         alert("유효하지 않은 증명서입니다.")
         history.push("/")
-      });
+      }
+    })
+    .catch((res) => {
+      console.log("에러")
+    });
   };
 
-  // const testData = {
-  //   "verifiedData": {
-  //     "id": "6160491d663f624b540bf200",
-  //     "user_id": "test",
-  //     "exchange_name": "Bithumb",
-  //     "start_date": "2021-01-10",
-  //     "end_date": "2021-01-10",
-  //     "order_currency": "OMG",
-  //     "payment_currency": "KRW",
-  //     "profit": "-10000",
-  //     "yield": "17,000",
-  //     "image_url": "https://vmc-bucket.s3.ap-northeast-2.amazonaws.com/verification/6940e31e-a91e-4203-934a-2dda06482b15.jpg",
-  //     "image_download_url": "https://vmc-bucket.s3.ap-northeast-2.amazonaws.com/verification/6940e31e-a91e-4203-934a-2dda06482b15_down.jpg"
-  //   }
-  // }
+  const [userInfo, setUserInfo] = useState({});
+
+  const getUsername = () => {
+      ComAxios({
+          method: "get",
+          url: "http://3.37.123.157:8000/user/info",
+      })
+          .then((res) => {
+              setUsername(res.data.data.name);
+          })
+          .catch((err) => {
+              console.log(`err : ${err}`);
+          });
+  };
 
   return (
     <Fragment>
@@ -82,7 +90,7 @@ export default function CertificationUrl({ match, location }) {
               <Table bordered>
                 <thead>
                   <tr>
-                    <th colSpan="6">{verifiedData.user_id}님의 수익 증명</th>
+                    <th colSpan="6">{username}님의 수익 증명</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -105,7 +113,6 @@ export default function CertificationUrl({ match, location }) {
                 </tbody>
               </Table>
               <hr />
-              증명서 링크 공유<br/>
               <Link href={verifiedData.image_url}>
                 {verifiedData.image_url}
               </Link>

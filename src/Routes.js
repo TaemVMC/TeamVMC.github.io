@@ -15,14 +15,12 @@ export default class Routes extends Component {
       <Router>
         <Switch>
           <Route path="/" exact component={Main} />
-          <Route path="/CertificationUrl" component={CertificationUrl} />
           <Sub>
             {/* <Route path="/dashboard" exact component={Dashboard} /> */}
             <Route path="/certification" exact component={Certification} />
             <Route path="/mycertification" exact component={Mycertification} />
             <Route path="/mypage" exact component={Mypage} />
-            <Route path="/CertificationUrl" exact component={CertificationUrl} />
-            <Route path="/verification/external/:name" component={CertificationUrl} />
+            <Route path="/CertificationUrl/:name" component={CertificationUrl} />
           </Sub>
         </Switch>
       </Router>
