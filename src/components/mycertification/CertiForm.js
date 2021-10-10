@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { Button, Row, Col, Card, Container } from 'react-bootstrap'
+import React, { useEffect, useState, useRef } from 'react'
+import { Button, Row, Col, Card, Container, Overlay,Tooltip } from 'react-bootstrap'
 import styles from '../../css/CertiForm.module.css'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 // import ComAxios from '../../util/ComAxios'
@@ -11,16 +11,43 @@ function CertiForm(props){
 
     useEffect(() => {
         console.log("useEffect 마운트될때");
+        console.log(props.num+1)
     }, []);
 
+    // 삭제 모달창
     const [modalShow, setModalShow] = React.useState(false);
+
+    // copied 알람
+    const [showTxt, setShowTxt] = useState(false);
+    const targetTxt = useRef(null);
+    const [showPic, setShowPic] = useState(false);
+    const targetPic = useRef(null);
+    const numbering = props.num+1
+
+    const handleSecond = (id, type) => {
+
+        if(type=="txt"){
+            setShowTxt(id);
+            setTimeout(function(){
+                setShowTxt(!id);
+            }
+            ,500)
+        } else{
+            setShowPic(id);
+            setTimeout(function(){
+                setShowPic(!id);
+            }
+            ,500)
+        }
+    }
+
 
         return (
             <div className={styles.certiBox}>
                 <Card>
                     <Card.Header className={styles.hd}>
                         <div className={styles.title}>
-                            <p className={styles.itemValue}>{props.order} 수익 증명서</p>
+                            <p className={styles.itemValue}>{numbering} &nbsp; {props.order} 수익 증명서</p>
                             <span className={styles.itemTag}>({props.start} ~ {props.end})</span>
                         </div>
                         <Button className={styles.deleteBtn} variant="" onClick={() => setModalShow(true)}>
@@ -56,22 +83,25 @@ function CertiForm(props){
                             <ul>
                                 <li>
                                     <CopyToClipboard text={props.certiUrl}>
-                                        <Button id={props.certiUrl} className={styles.urlBtn} variant="dark">
-                                            <BsFileEarmarkFontFill />
+                                        <Button id={props.certiUrl} className={styles.urlBtn} variant="light" ref={targetTxt} onClick={() => handleSecond(!showTxt,"txt")} variant="dark">
+                                            <span>텍스트 URL</span>
+                                            <BsFileEarmarkFontFill style={{"marginBottom":"3px"}}/>
                                         </Button>
                                     </CopyToClipboard>
                                 </li>
                                 <li>
                                     <CopyToClipboard text={ props.imageUrl }>
-                                        <Button id={props.imageUrl} className={styles.urlBtn} variant="dark">
-                                            <BsFileEarmarkImageFill />
+                                        <Button id={props.imageUrl} className={styles.urlBtn} variant="light" ref={targetPic} onClick={() => handleSecond(!showPic, "pic")} variant="dark">
+                                            <span>사진 URL</span>
+                                            <BsFileEarmarkImageFill style={{"marginBottom":"3px"}}/>
                                         </Button>
                                     </CopyToClipboard>
                                 </li>
                                 <li>
                                     <Link href={props.imageDownloadUrl}>
                                         <Button id={props.imageDownloadUrl} className={styles.urlBtn} variant="dark">
-                                            <BsDownload />
+                                            <span>증명서 받기</span>
+                                            <BsDownload style={{"marginBottom":"3px"}}/>
                                         </Button>
                                     </Link>
                                 </li>
@@ -83,69 +113,24 @@ function CertiForm(props){
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                 />
+                <Overlay target={targetTxt.current} show={showTxt} placement="bottom-end">
+                    {(props) => (
+                        <Tooltip id="overlay-example" {...props}>
+                        Copied!
+                        </Tooltip>
+                    )}
+                </Overlay>
+                <Overlay target={targetPic.current} show={showPic} placement="bottom-end" className={styles.copyOverlay}>
+                    {(props) => (
+                        <Tooltip id="overlay-example" {...props} className={styles.copyTooltip}>
+                        Copied!
+                        </Tooltip>
+                    )}
+                </Overlay>
             </div>
         )
 }
 
 export default CertiForm;
 
-
-// click -> copied
-// copied 알람
-// const [show, setShow] = useState(false);
-// const target = useRef(null);
-// function Example() {
-//     const [show, setShow] = useState(false);
-//     const target = useRef(null);
-  
-//     return (
-//       <>
-//         <Button ref={target} onClick={() => setShow(!show)}>
-//           Click me!
-//         </Button>
-//         <Overlay target={target.current} show={show} placement="right">
-//           {(props) => (
-//             <Tooltip id="overlay-example" {...props}>
-//              Url Copied!
-//             </Tooltip>
-//           )}
-//         </Overlay>
-//       </>
-//     );
-//   }
-  
-//   render(<Example />);
-
-
-
-
-
-
-
-
-
-    // 5.2  증명서 사진 url
-    // 사진url호출
-    // data
-    // const handleImageUrl = (verification_id) => {
-    //     console.log(verification_id);
-    //     ComAxios({
-    //         method: "get",
-    //         url: "http://3.37.123.157:8000/verification/image/6153094e1fc2f34655124588",
-    //         // url: "http://3.37.123.157:8000/verification/image/"{verification_id},
-    //     })
-    //     .then((imageUrl) => {
-    //         // console.log(imageUrl.data.url);
-    //         // const dd = coin.data.data.map((data) => {
-    //         //   return data.coin_symbol;
-    //         // });
-    //         // setCoinSymbolList(dd);
-    //       })
-    //       .catch((imageUrl) => {
-    //         // console.log(imageUrl.data.url);
-    //       });
-    // }
-
-
-
-    
+// 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light', 'link'

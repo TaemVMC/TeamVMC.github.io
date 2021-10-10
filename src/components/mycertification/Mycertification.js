@@ -9,11 +9,13 @@ import ComAxios from "../../util/ComAxios";
 import {BsPlusCircleFill} from "react-icons/bs";
 import { Link } from "react-router-dom"
 import { useHistory } from "react-router-dom";
+import { BsGraphUp } from "react-icons/bs";
 
 export default function Mycertification() {
 
     const [verifiedLists, setVerifiedLists] = useState([]);
     let history = useHistory();
+    const totalNum = verifiedLists.length;
 
     useEffect(() => {
         console.log("useEffect 마운트될때");
@@ -44,10 +46,14 @@ export default function Mycertification() {
 
     return(
         <div className={styles.container}>
+            {/* <div className={styles.uppersideTitle}>
+                <p>총 {totalNum}개의 수익 증명서를 보유하고 있습니다.</p>
+            </div> */}
         <div className={styles.background}>
         <article className={styles.certiList}>
-        {verifiedLists.map((data) => (
+        {verifiedLists.map((data, num) => (
                         <CertiForm
+                            num={num}
                             key={data.id}
                             id={data.id}
                             order={data.order_currency}
@@ -62,12 +68,13 @@ export default function Mycertification() {
                             certiUrl={data.certification_url}
                         ></CertiForm>
                         ))}
+                <div className={styles.addNew}>
+                    <Link to="/certification" style={{ color: "black", textDecoration: "none" }}>
+                        <p><BsPlusCircleFill className={styles.plusPicto} /></p>
+                    </Link>
+                </div>
         </article>
-            <div className={styles.addNew}>
-                <Link to="/certification" style={{ color: "black", textDecoration: "none" }}>
-                    <p><BsPlusCircleFill className={styles.plusPicto} /></p>
-                </Link>
-            </div>
+
         </div>
         </div>
     );
