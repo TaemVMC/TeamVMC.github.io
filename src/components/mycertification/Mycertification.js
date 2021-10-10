@@ -8,10 +8,12 @@ import ComAxios from "../../util/ComAxios";
 // import dummy from "../../db/data.json"
 import {BsPlusCircleFill} from "react-icons/bs";
 import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 export default function Mycertification() {
 
     const [verifiedLists, setVerifiedLists] = useState([]);
+    let history = useHistory();
 
     useEffect(() => {
         console.log("useEffect 마운트될때");
@@ -26,7 +28,12 @@ export default function Mycertification() {
             url: "http://3.37.123.157:8000/verification",
         })
         .then((list) => {
-            setVerifiedLists(list.data)
+            if (list.status == 200 && list.data.code == 3200){
+                setVerifiedLists(list.data)
+            } else{
+                alert("첫 증명서를 발급해주세요.")
+                history.push("/certification")
+            }
         })
         .catch((list) => {
             console.log(list);

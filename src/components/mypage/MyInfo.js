@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import styles from "../../css/MyInfo.module.css";
-import ComAxios from "./../../util/ComAxios";
+import ComAxios from "../../util/ComAxios";
 
 export default function MyInfo() {
     useEffect(() => {

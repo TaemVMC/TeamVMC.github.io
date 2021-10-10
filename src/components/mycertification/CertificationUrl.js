@@ -5,12 +5,14 @@ import { Paper, Link } from "@mui/material";
 import ComAxios from "../../util/ComAxios";
 import { useState, useEffect } from "react";
 import { Table } from 'react-bootstrap'
+import { useHistory } from "react-router-dom";
 
 export default function CertificationUrl({ match, location }) {
   
   const [verifiedData, setVerifiedData] = useState([]);
   const verification_id = match.params.name;
-  
+  const history = useHistory();
+
   useEffect(() => {
     console.log("useEffect 마운트될때");
     loadUrl(verification_id);
@@ -26,10 +28,13 @@ export default function CertificationUrl({ match, location }) {
           url: "http://3.37.123.157:8000/verification/external/"+id,
       })
       .then((res) => {
-        setVerifiedData(res.data);
+        if (res.status == 200 && res.data.code == 3200){
+          setVerifiedData(res.data);
+        }
       })
       .catch((res) => {
-          console.log(res);
+        alert("유효하지 않은 증명서입니다.")
+        history.push("/")
       });
   };
 
