@@ -20,24 +20,30 @@ const responseHandler = (response) => {
 };
 
 //에러설정 필요시 ..
-const errorHandler = (error) => {
-  // if (response.status == 401) {
-  //   goIndexPage()
-  // }
+const requestErrorHandler = (error) => {
   return Promise.reject(error);
+};
+
+const responseErrorHandler = (...error) => {
+  const response = error[0].response;
+  setJwtTokenCookie(response.headers.jwt);
+  if (response.status === 401) {
+    alert("로그인 인증 실패");
+    goIndexPage();
+    return;
+  } else {
+    return Promise.reject(error);
+  }
 };
 
 //request 보내기 전에 실행
 ComAxios.interceptors.request.use(
   (request) => requestHandler(request),
-  (error) => errorHandler(error)
+  (error) => requestErrorHandler(error)
 );
 
 //response 받은 후 실행
-ComAxios.interceptors.response.use(
-  (response) => responseHandler(response),
-  (error) => errorHandler(error)
-);
+ComAxios.interceptors.response.use((response) => responseHandler(response), responseErrorHandler);
 
 const goIndexPage = () => {
   let history = createBrowserHistory({ forceRefresh: true });

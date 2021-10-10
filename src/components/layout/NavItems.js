@@ -13,16 +13,6 @@ export const mainListItems = (
   <div>
     <ListItem>
       <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      {/* <ListItemText primary="Dashbaord" /> */}
-      <Link to="/dashboard" style={{ color: "black", textDecoration: "none" }}>
-        Dashboard
-      </Link>
-    </ListItem>
-
-    <ListItem>
-      <ListItemIcon>
         <BrightnessAutoIcon />
       </ListItemIcon>
       {/* <ListItemText primary="Certification" /> */}
