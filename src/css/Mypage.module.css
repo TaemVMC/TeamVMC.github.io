@@ -1,15 +1,23 @@
 .ProfileContent {
   padding: 0 20%;
   margin-top: 10vh;
+  margin-bottom: 15vh;
 }
 
 .ProfileContent .deleteContent {
+  width: 80%;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  cursor: pointer;
 }
 
-.ProfileContent .deleteContent > p {
-  margin-right: 8px;
+.ProfileContent .deleteContent .deleteAsk {
+  margin: 0 8px 0 0;
+}
+
+.ProfileContent .deleteContent .deleteClick {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=Mypage.module.css.map */

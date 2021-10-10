@@ -7,7 +7,7 @@ export default function ModalDeleteVerification (props) {
             <div>
                 <Modal
                 {...props}
-                size="lg"
+                size="md"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
                 >
@@ -17,11 +17,10 @@ export default function ModalDeleteVerification (props) {
                     </Modal.Title>
                 </Modal.Header> */}
                 <Modal.Body>
-                    <h4 style={{"fontSize":"1.2rem"}}>증명서 삭제</h4>
-                    <hr/>
+                    <h4 style={{"fontSize":"1rem"}}>증명서 삭제</h4>
+                    {/* <hr/> */}
                     <p style={{"margin":"30px 10px 10px 10px", "fontSize":"1rem"}}>
-                    삭제된 증명서는 복구하실 수 없습니다.<br/>
-                    계속해서 증명서를 삭제하시겠습니까?
+                    삭제된 증명서는 복구하실 수 없습니다. 계속해서 증명서를 삭제하시겠습니까?
                     </p>
                 </Modal.Body>
                 <Modal.Footer>

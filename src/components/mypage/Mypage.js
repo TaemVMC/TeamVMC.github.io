@@ -34,7 +34,10 @@ export default function Mypage () {
     return (
         <div className={styles.ProfileContent}>
                 <MyInfo></MyInfo>
-                    <span onClick={() => setModalShow(true)} style={{"textDecoration":"underline", "cursor":"pointer"}}>회원탈퇴</span>
+                <div className={styles.deleteContent}>
+                    <p className={styles.deleteAsk}>계정을 삭제하시겠습니까?</p>
+                    <span onClick={() => setModalShow(true)} className={styles.deleteClick}>회원탈퇴</span>
+                </div>
                 <ModalDeleteAccount
                     show={modalShow}
                     onHide={() => cancelDeleteAccount()}

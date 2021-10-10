@@ -33,9 +33,11 @@ export default function Mycertification() {
             if (list.status == 200 && list.data.code == 3200){
                 setVerifiedLists(list.data.data)
                 console.log(list.data.data)
+                console.log('호출 성공: 증명서 있음')
             } else{
                 alert("첫 증명서를 발급해주세요.")
                 history.push("/certification")
+                console.log('호출 성공: 증명서 없음')
             }
         })
         .catch((list) => {
