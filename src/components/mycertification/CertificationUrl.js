@@ -87,7 +87,7 @@ export default function CertificationUrl({ match, location }) {
               <Table bordered>
                 <thead>
                   <tr>
-                    <th colSpan="6">{username}님의 수익 증명</th>
+                    <th colSpan="6">수익 증명서</th>
                   </tr>
                 </thead>
                 <tbody>
