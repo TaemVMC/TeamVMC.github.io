@@ -13,7 +13,7 @@ export default function GoogleButton() {
   const dispatch = useDispatch();
   const handleGoogleResponse = (response) => {
     //google에서 받은 response
-    const url = "http://3.37.123.157:8000/user/signin";
+    const url = process.env.REACT_APP_API_SERVER_URL + "/user/signin";
     const data = {
       idToken: response.tokenId,
     };
