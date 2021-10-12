@@ -34,7 +34,7 @@ export default function Certification() {
   const initCoin = () => {
     ComAxios({
       method: "get",
-      url: "http://3.37.123.157:8000/transactions/exchange/1/coin",
+      url: process.env.REACT_APP_API_SERVER_URL + "/transactions/exchange/1/coin",
     })
       .then((coin) => {
         const coinList = coin.data.data.map((data) => {
@@ -48,7 +48,7 @@ export default function Certification() {
   const initPayment = () => {
     ComAxios({
       method: "get",
-      url: "http://3.37.123.157:8000/transactions/exchange/1/payment-currency",
+      url: process.env.REACT_APP_API_SERVER_URL + "/transactions/exchange/1/payment-currency",
     })
       .then((payment) => {
         const coinList = payment.data.data.map((data) => {
@@ -102,7 +102,7 @@ export default function Certification() {
     };
     ComAxios({
       method: "post",
-      url: "http://3.37.123.157:8000/transactions/exchange/1",
+      url: process.env.REACT_APP_API_SERVER_URL + "/transactions/exchange/1",
       data: data,
     })
       .then((res) => {

@@ -27,7 +27,7 @@ export default function CertificationUrl({ match, location }) {
   const loadUrl = (id) => {
     ComAxios({
       method: "get",
-      url: "http://3.37.123.157:8000/verification/external/" + id,
+      url: process.env.REACT_APP_API_SERVER_URL + "/verification/external/" + id,
     })
       .then((res) => {
         console.log("성공");
@@ -49,7 +49,7 @@ export default function CertificationUrl({ match, location }) {
   const getUsername = () => {
     ComAxios({
       method: "get",
-      url: "http://3.37.123.157:8000/user/info",
+      url: process.env.REACT_APP_API_SERVER_URL + "/user/info",
     })
       .then((res) => {
         setUsername(res.data.data.name);
