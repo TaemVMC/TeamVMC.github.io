@@ -53,7 +53,7 @@ const goIndexPage = () => {
 export const setJwtTokenCookie = (value) => {
   setCookie("jwt", value, {
     path: "/",
-    secure: true, //secure : 쿠키값을 건드리지 x
+    // secure: true, //secure : 쿠키값을 건드리지 x
   });
 };
 export default ComAxios;
